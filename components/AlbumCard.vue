@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="box column is-one-quarter">
         <h3>{{ album.title }}</h3>
         <a href="#">Ver Álbum</a>
     </div>
@@ -14,3 +14,11 @@ export default {
     }
 }
 </script>
+
+<style scoped>
+
+    .box{
+        padding: 1em !important;
+    }
+
+</style>
