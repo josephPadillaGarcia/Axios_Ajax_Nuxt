@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <header>
-        <nuxt-link to="/">Regresar</nuxt-link>        
+        <nuxt-link to="/" class="button is-primary">Regresar</nuxt-link>        
         <h1 class="title">{{ contentAlbum.id }} : {{ contentAlbum.title }}</h1>
     </header>
     <div class="columns is-multiline">
@@ -40,7 +40,7 @@ export default {
       .then((photosResponse) => {
         this.photosAlbum = photosResponse.data;
       });
-  },
+  }
 };
 </script>
 
