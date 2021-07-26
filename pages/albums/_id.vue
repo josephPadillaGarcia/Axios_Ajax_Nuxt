@@ -42,9 +42,9 @@ export default {
       });
   }*/
    created: async function(){
-      let albumResponse = axios.get(`${env.endpoint}/albums/${this.$route.params.id}`);
+      let albumResponse = await axios.get(`${env.endpoint}/albums/${this.$route.params.id}`);
       this.contentAlbum = albumResponse.data; 
-      let photosResponse = axios.get(`${env.endpoint}/albums/${this.$route.params.id}/photos`);
+      let photosResponse = await  axios.get(`${env.endpoint}/albums/${this.$route.params.id}/photos`);
       this.photosAlbum = photosResponse.data;
   }
 };
@@ -54,11 +54,6 @@ export default {
 
     .container{
         text-align: center;
-    }
-
-    header{
-        margin-top: 50px;
-        margin-bottom: 50px;
     }
 
 </style>

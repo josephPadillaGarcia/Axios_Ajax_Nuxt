@@ -1,6 +1,8 @@
 <template>
 <div class="container">
-  <h1 class="title">Álbums de la página</h1>
+  <header>
+    <h1 class="title">Álbums de la página</h1>
+  </header>
   <div class="columns is-multiline">
     <AlbumCard :album="album" v-for="album in albums" :key="album.id" />
   </div>
@@ -29,7 +31,7 @@ export default {
     })
   }*/
   created: async function(){
-    let albumsResponse = axios.get(`${env.endpoint}/albums`);
+    let albumsResponse = await axios.get(`${env.endpoint}/albums`);
     this.albums = albumsResponse.data;
   }
 
