@@ -1,7 +1,9 @@
 <template>
-    <div class="box column is-one-quarter">
-        <h3>{{ album.title }}</h3>
-        <a href="#">Ver Álbum</a>
+    <div class="column is-one-quarter">
+        <div class="box">
+            <h3>{{ album.title }}</h3>
+            <a href="#" class="button is-primary">Ver Álbum</a>
+        </div>
     </div>
 </template>
 
@@ -18,7 +20,10 @@ export default {
 <style scoped>
 
     .box{
-        padding: 1em !important;
+        padding: 1em;
+    }
+    h3{
+        min-height: 5em;
     }
 
 </style>
