@@ -22,11 +22,15 @@ export default {
   components:{
     AlbumCard
   },
-  created(){
+  /*created(){
     axios.get(`${env.endpoint}/albums`).then(response=>{
       console.log(response);
       this.albums = response.data;
     })
+  }*/
+  created: async function(){
+    let albumsResponse = axios.get(`${env.endpoint}/albums`);
+    this.albums = albumsResponse.data;
   }
 
 }

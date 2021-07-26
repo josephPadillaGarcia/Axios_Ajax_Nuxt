@@ -30,7 +30,7 @@ export default {
       photosAlbum: {},
     };
   },
-  created() {
+  /*created() {
     let albumId = this.$route.params.id;
     axios.get(`${env.endpoint}/albums/${albumId}`).then((albumResponse) => {
       this.contentAlbum = albumResponse.data;
@@ -40,6 +40,12 @@ export default {
       .then((photosResponse) => {
         this.photosAlbum = photosResponse.data;
       });
+  }*/
+   created: async function(){
+      let albumResponse = axios.get(`${env.endpoint}/albums/${this.$route.params.id}`);
+      this.contentAlbum = albumResponse.data; 
+      let photosResponse = axios.get(`${env.endpoint}/albums/${this.$route.params.id}/photos`);
+      this.photosAlbum = photosResponse.data;
   }
 };
 </script>
